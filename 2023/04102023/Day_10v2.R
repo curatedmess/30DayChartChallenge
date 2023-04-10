@@ -67,5 +67,5 @@ df %>%
        x = "\n\nMiles Per Gallon (MPG)")
 
 # save plot ---------------------------------------------------------------
-ggsave(paste0("day_10_", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 6, height = 6)
+ggsave(paste0("day_10v2_", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 6, height = 6)
 
