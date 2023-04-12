@@ -28,7 +28,7 @@ day_12_12042023 <- df %>%
   theme(plot.title = element_text(margin = margin(0, 0, 0, 0)),
     plot.subtitle = element_text(margin = margin(-10, 0, 20, 0))) +
   labs(title = "Historic potholes in Leeds",
-       subtitle = "Distribution of the total number of potholes by city locality\nrepaired between Jan 2018 and Sept 2020")
+       subtitle = "Distribution of the total number of potholes by locality \nrepaired between Jan 2018 and Sept 2020")
 
 # save plot ---------------------------------------------------------------
 finalise_plot(plot_name = day_12_12042023,
