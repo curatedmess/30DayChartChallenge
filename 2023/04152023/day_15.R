@@ -94,7 +94,7 @@ df %>%
   geom_text(aes(x = test, y = ifelse(test == "positive", row_num, (-1 * row_num)), label = song_name), color = "#000000", size = 3.5, family = font_t) +
   geom_hline(yintercept = 0) +
   annotate("text", x = 1, y = -15, label = "Ed Sheeran", family = font_t, fontface = "bold", size = 11.5, color = "#000000", hjust = 0.5) +
-  annotate("text", x = 1, y = -20, label = "Sentiment analysis of 64 songs from 5 albums,\narranged from most positive (top left)\nto most negative (bottom right)", family = font, size = 3, color = "#000000", hjust = 0.5) +
+  annotate("text", x = 1, y = -20, label = "Sentiment analysis of 64 songs from 5 albums,\narranged from the most positive (top left)\nto the most negative (bottom right)", family = font, size = 3, color = "#000000", hjust = 0.5) +
   annotate("text", x = 1, y = -24, label = "+ × ÷ = -", family = font_t, size = 8, color = "#000000", fontface = "bold", hjust = 0.5) +
   annotate("text", x = 1, y = -1.25, label = "Positive", family = font, size = 4, color = "#000000", fontface = "bold", hjust = 0.5) +
   annotate("text", x = 2, y = 1.25, label = "Negative", family = font, size = 4, color = "#000000", fontface = "bold", hjust = 0.5) +
