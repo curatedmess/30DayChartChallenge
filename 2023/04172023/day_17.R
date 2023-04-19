@@ -490,7 +490,6 @@ df_network %>%
   geom_edge_link(color = "#272324") +
   geom_node_point(size = 0.75) +
   geom_node_point(aes(size = size, color = group), alpha = 0.90) +
-  #geom_text(aes(x = x, y = y + 3, label = ifelse(name %in% c("1950s", "1960s", "1970s", "1980s"), name, "")), color = "#000000", family = font, size = 3) +
   scale_size_continuous(name = "Number of Shows in Top 30") +
   scale_color_manual(values = c("#672fe6", "#f6ac0f", "#0fcdf6", "#f60f5a", "black"), guide = "none") +
   annotate("text", x = -5, y = 11, label = "1970s", color = "#000000", family = font, fontface = "bold", size = 3) +
