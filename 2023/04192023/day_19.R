@@ -7,7 +7,7 @@ library(tidyverse)
 library(showtext)
 library(janitor)
 library(scales)
-library(scico)
+# library(scico)
 
 # add font ----------------------------------------------------------------
 font_add_google(name = "Roboto", family = "Roboto")
@@ -45,7 +45,8 @@ df %>%
   ggplot() +
   geom_line(aes(x = time, y = value, group = plastic_category, color = plastic_category), size = 1) +
   geom_text(aes(x = ifelse(scenario == "MODERATE-FULL", 2045, 2055), y = ifelse(scenario == "MODERATE-FULL", 14.5, 20), label = ifelse(time == 2060 & plastic_category == "Total", paste0(scales::percent(perc_change), " change\n2019 to 2060"), ""), color = plastic_category), family = font, fontface = "bold", size = 3, show.legend = FALSE) +
-  scale_color_scico_d(palette = "buda") +
+  # scale_color_scico_d(palette = "buda") +
+  scale_color_manual(values = c("#B29CDB", "#FCB249", "#FAFC97")) +
   facet_wrap(~ scenario_2, ncol = 1, scales = "free") +
   theme_minimal() +
   theme(plot.title = element_text(family = font_t, size = 32, hjust = 0.5, color = "#FFFFFF", lineheight = 1.2),
