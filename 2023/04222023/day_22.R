@@ -36,15 +36,16 @@ df %>%
   # https://twitter.com/tanya_shapiro/status/1592328864176693248?s=20&t=vpCboM081dcuOqHkpwx1PQ
   ggpattern::geom_rect_pattern(data = df, aes(xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf), pattern = "gradient", pattern_fill = "#87CEEB", pattern_fill2 = "#FFFFFF", color = NA) +
   geom_tile(aes(x = order, y = 0, fill = n), color = "#FFFFFF", size = 0.5) +
+  geom_textpath(aes(x = order, y = 0, label = p_year), family = font, color = "#000000", size = 2, vjust = -3) +
   geom_hline(yintercept = 0.5, color = "#000000") +
   geom_hline(yintercept = -0.5, color = "#000000") +
   scale_y_continuous(limits = c(-7, NA)) +
   scale_fill_scico(palette = "bamako", direction = -1, breaks = c(min(df$n), max(df$n))) +
   annotate("text", x = 10, y = -6.5, label = "U.S. Wind Turbines\n", size = 7, color = "#000000", family = font_t, vjust = "bottom") +
   annotate("text", x = 10, y = -6.5, label = "From 2003 to 2022, the yearly count of turbines that\nbecame operational and started generating power.\n", size = 3, color = "#000000", family = font) +
-  annotate("text", x = 0, y = -0.8, label = "2003", size = 3, color = "#000000", family = font, angle = -10, fontface = "bold") +
-  annotate("segment", x = 0.4, y = -0.8, xend = 1.2, yend = -0.8, linewidth = 0.5, arrow = arrow(length = unit(1.25, "mm")), color = "#000000") +
-  coord_polar(start = 0, clip = "off") +
+  # annotate("text", x = 0, y = -0.8, label = "2003", size = 3, color = "#000000", family = font, angle = -10, fontface = "bold") +
+  # annotate("segment", x = 0.4, y = -0.8, xend = 1.2, yend = -0.8, linewidth = 0.5, arrow = arrow(length = unit(1.25, "mm")), color = "#000000") +
+  coord_curvedpolar(start = 0, clip = "off") +
   theme_void() +
   theme(plot.caption.position = "plot",
         plot.caption = element_text(size = 8, family = font, color = "#000000", hjust = 0.5),
