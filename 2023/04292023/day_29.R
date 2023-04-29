@@ -36,6 +36,9 @@ df <- data %>%
 # https://clauswilke.com/dataviz/visualizing-uncertainty.html
 # https://wilkelab.org/ungeviz/
 
+# reference to code/idea for the stat_confidence_density + the jitter
+# https://wilkelab.org/ungeviz/reference/stat_confidence_density.html
+
 # # calculate summary data ------------------------------------------------
 df_summary <- df %>% 
   group_by(day) %>% 
