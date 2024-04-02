@@ -51,7 +51,7 @@ df_tm <- tm$tm %>%
 df_tm %>% 
   ggplot(aes(xmin = x0, ymin = y0, xmax = x1, ymax = y1)) + 
   with_outer_glow(with_inner_glow(geom_rect(color = "#FFFFFF", fill = NA, linewidth = 2), colour = "#04d9ff", sigma = 10, expand = 3), colour = "#04d9ff", sigma = 15, expand = 5) +
-  geom_richtext(aes(x = x, y = y, label = paste0("<sup>", name, "</sup>", "K", " = ", round(vSize, digits = 3), "%")), family = font, color = "#FFFFFF", size = 2.8, fill = NA, label.padding = unit(c(0, 0, 0, 0), "lines"), label.colour = NA) +
+  geom_richtext(aes(x = x, y = y, label = paste0("<sup>", name, "</sup>", "Kr", " = ", round(vSize, digits = 3), "%")), family = font, color = "#FFFFFF", size = 2.6, fill = NA, label.padding = unit(c(0, 0, 0, 0), "lines"), label.colour = NA) +
   annotate("text", x = 0.4, y = -0.175, label = "Plus one isotope with an extremely long half-life", hjust = 0.5, family = font, size = 3.25, color = "#FFFFFF") +
   annotate("curve", x = 0.84, y = -0.165, xend = 0.95, yend = -0.1, linewidth = 0.5,  curvature = -0.2, arrow = arrow(length = unit(1.25, "mm")), color = "#FFFFFF") +
   scale_size(range = c(3, 6)) +
