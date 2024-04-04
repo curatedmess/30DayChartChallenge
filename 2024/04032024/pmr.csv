@@ -1,0 +1,73 @@
+﻿Manufacturer,Type,Season,Episode
+Daihatsu ,Van,1,1
+Cadillac ,Car,1,2
+Oldsmobile ,Car,1,3
+Honda,Car,1,4
+Mitsubishi,Car,1,5
+Ford,Car,1,6
+Ford,Truck,1,7
+Pontiac,Car,1,8
+Chevrolet,Truck,1,9
+Ford,Car,1,10
+Nissan,Car,1,11
+Volkswagen,Car,1,12
+Honda,Car,1,13
+Toyota,SUV,1,14
+Ford,Car,1,15
+Cadillac ,Car,2,1
+Ford,Car,2,2
+Volkswagen,Van,2,3
+Chevrolet,SUV,2,4
+Chevrolet,SUV,2,5
+Acura,Car,2,6
+Nissan,Car,2,7
+Ford,Car,2,8
+Ford,Van,3,1
+Chevrolet,Truck,3,2
+Chevrolet,Car,3,3
+Chevrolet,Car,3,4
+Honda,Car,3,5
+Chevrolet,Car,3,6
+Toyota,Van,3,7
+Mitsubishi,Car,3,8
+AMC,Car,4,1
+Toyota,Car,4,2
+Chevrolet,Truck,4,3
+Dodge,Van,4,4
+Chevrolet,Car,4,5
+Ford,Car,4,6
+Buick,Car,4,7
+Chevrolet,Truck,4,8
+Chevrolet,Car,5,1
+Volkswagen,Car,5,2
+Mitsubishi,Car,5,3
+Ford,Truck,5,4
+Toyota,Truck,5,5
+Cadillac ,Car,5,6
+Toyota,Car,5,7
+Land Rover,SUV,5,8
+Chevrolet,Car,5,9
+Ford,Car,5,10
+Mercury,Car,5,11
+Ford,Car,5,12
+Chevrolet,Truck,5,13
+Volkswagen,Car,5,14
+Chevrolet,SUV,5,15
+Nissan,Car,5,16
+Ford,Car,6,2
+Unknown,Delivery,6,3
+Chevrolet,Car,6,4
+Mercedez Benz,Car,6,5
+Chevrolet,Van,6,6
+Plymouth,Van,6,7
+Nissan,Car,6,8
+Honda,Car,6,9
+Ford,Car,6,10
+Ford,Van,6,11
+Jeep,SUV,6,12
+Pontiac,Car,6,13
+Toyota,SUV,6,14
+Ford,Car,6,15
+Chevrolet,Car,6,16
+Subaru,Car,6,17
+Cadillac ,Car,6,18
