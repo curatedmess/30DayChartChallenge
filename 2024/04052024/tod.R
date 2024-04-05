@@ -30,12 +30,8 @@ showtext_opts(dpi = 320)
 # https://bldavies.com/blog/accessing-strava-api/
 
 # # credentials -------------------------------------------------------------
-# client_id <- enter client id here
-# secret <- "enter your secret here"
-
-client_id <- 44244
-
-secret <- "883168b6a52e78640bde1a33edb83badd0f13b3f"
+client_id <- enter client id here
+secret <- "enter your secret here"
 
 # OAuth application -------------------------------------------------------
 app <- oauth_app("strava", client_id, secret)
