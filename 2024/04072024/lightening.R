@@ -23,7 +23,7 @@ showtext_opts(dpi = 320)
 options(scipen = 999)
 
 # get image ---------------------------------------------------------------
-url <-"https://upload.wikimedia.org/wikipedia/commons/9/92/Lightning_%283761397491%29.jpg"
+url <-"https://images.pexels.com/photos/53459/lightning-storm-weather-sky-53459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 img <- image_read(url)
 
 # get data ----------------------------------------------------------------
@@ -31,13 +31,13 @@ raw <- read.csv("NRI_Table_Counties_NorthCarolina.csv")
 
 # wrangle and create data frame -------------------------------------------
 df <- raw %>% 
-  select(c(LTNG_EVNTS)) %>% 
+  select(c(COUNTYFIPS, LTNG_EVNTS)) %>% 
   pivot_longer(cols = c("LTNG_EVNTS"), names_to = "type", values_to = "count")
 
 # create plot -------------------------------------------------------------
 df %>% 
-  ggplot(aes(x = count)) +
-  as_reference(geom_histogram(bins = 10, color = "#000000"), id = "histogram") +
+  ggplot(aes(x = reorder(as.factor(COUNTYFIPS), desc(count)), y = count)) +
+  as_reference(geom_col(), id = "histogram") +
   with_blend(background_image(img), bg_layer = "histogram", blend_type = "atop") +
   # scale_x_continuous(expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
@@ -47,9 +47,9 @@ df %>%
         plot.title.position = "plot",
         plot.caption = element_text(family = font, hjust = 0.5, size = 7, color = "#000000", margin = margin(t = 35)),
         plot.caption.position = "plot",
-        axis.text.x = element_text(family = font, hjust = 0.5, size = 8, color = "#000000", margin = margin(t = 5)),
+        # axis.text.x = element_text(family = font, hjust = 0.5, size = 8, color = "#000000", margin = margin(t = 5)),
         axis.text.y = element_text(family = font, hjust = 0.5, size = 8, color = "#000000", margin = margin(r = 5)),
-        # axis.title.y = element_text(family = font_t, hjust = 0.5, size = 10, color = "#000000", margin = margin(r = 10), angle = 90),
+        axis.title.y = element_text(family = font_t, hjust = 0.5, size = 10, color = "#000000", margin = margin(r = 10), angle = 90),
         axis.title.x = element_text(family = font_t, hjust = 0.5, size = 10, color = "#000000", margin = margin(t = 10)),
         axis.line.x = element_line(linewidth = 0.5),
         panel.grid.major = element_blank(),
@@ -57,10 +57,10 @@ df %>%
         plot.margin = unit(c(1, 1, 1, 1), "cm"),
         panel.background = element_rect(color = NA, fill = "#FFFFFF"),
         plot.background = element_rect(color = NA, fill = "#FFFFFF")) +
-  labs(title = "LIGHTENING",
+  labs(title = "LIGHTNING",
        subtitle = "County-level distribution for North Carolina, USA from FEMA's National Risk Index",
-       # y = "COUNTY", 
-       x = "# OF EVENTS BY COUNTY",
+       y = "# of Lightning Events", 
+       x = "100 Counties of North Carolina",
        caption = "#30DayChartChallenge | Data: fema.gov | Design: Ryan Hart")
 
 # save plot ———————————————————————————————————————————————————————————————
