@@ -24,7 +24,8 @@ svg_url_bball <- 'https://openmoji.org/data/color/svg/1F3C0.svg'
 svg_txt_bball <- paste(readLines(svg_url_bball), collapse = "\n")
 
 # function to create points within a circle -------------------------------
-# used the following site for reference and some chatgpt to develop this --
+# used the following sites for reference and some chatgpt to develop this -
+# i hope it's accurate :) -------------------------------------------------
 # https://meyavuz.wordpress.com/2018/11/15/generate-uniform-random-points-within-a-circle/
 # https://mathworld.wolfram.com/DiskPointPicking.html
 
