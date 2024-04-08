@@ -39,8 +39,8 @@ df %>%
   ggplot(aes(x = reorder(as.factor(COUNTYFIPS), desc(count)), y = count)) +
   as_reference(geom_col(), id = "histogram") +
   with_blend(background_image(img), bg_layer = "histogram", blend_type = "atop") +
-  # scale_x_continuous(expand = c(0, 0)) +
-  scale_y_continuous(expand = c(0, 0)) +
+  # # scale_x_continuous(expand = c(0, 0)) +
+  # scale_y_continuous(expand = c(0, 0)) +
   theme_void() +
   theme(plot.title = element_text(family = font_t, size = 33, color = "#000000", face = "bold", hjust = 0.5, margin = margin(b = 5)),
         plot.subtitle = element_text(family = font, size = 9, color = "#000000", hjust = 0.5, margin = margin(b = 35)),
