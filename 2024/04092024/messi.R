@@ -27,23 +27,23 @@ df <- data.frame(team = c("Barcelona", "PSG", "Argentina", "Inter Miami"), goals
 # create plot -------------------------------------------------------------
 df %>%
   ggplot() +
-  geom_segment(data = df %>% filter(level == "Majors"), aes(x = ifelse(Value == 5, 4.75, Value), y = ifelse(Value == 5, 2.9, 3), xend = ifelse(Value == 5, 0.25, Value), yend = ifelse(Value == 5, 0.1, 0)), color = "#696982", linewidth = 0.75, lineend = "round") +
+  geom_segment(data = df %>% filter(level == "Majors"), aes(x = ifelse(Value == 5, 4.75, Value), y = ifelse(Value == 5, 2.9, 3), xend = ifelse(Value == 5, 0.25, Value), yend = ifelse(Value == 5, 0.1, 0)), color = "#999999", linewidth = 0.75, lineend = "round") +
   geom_segment(data = df %>% filter(level == "Minors"), aes(x = ifelse(Value == 5, 4.75, Value), y = ifelse(Value == 5, 2.9, 3), xend = ifelse(Value == 5, 0.25, Value), yend = ifelse(Value == 5, 0.1, 0)), color = "#f7b5cd", linewidth = 0.75, lineend = "round") +
   facet_wrap(~ Group_ID, ncol = 12) +
   coord_equal() +
   theme_void() +
-  theme(plot.title = element_text(family = font, size = 28, color = "#E6E6EA", face = "bold", hjust = 0.5, margin = margin(b = 5)),
-        plot.subtitle = element_markdown(family = font, size = 14, color = "#696982", hjust = 0.5, margin = margin(b = 25), lineheight = 1.1),
+  theme(plot.title = element_text(family = font, size = 28, color = "#FFFFFF", face = "bold", hjust = 0.5, margin = margin(b = 5)),
+        plot.subtitle = element_markdown(family = font, size = 14, color = "#999999", hjust = 0.5, margin = margin(b = 25), lineheight = 1.1),
         plot.title.position = "plot",
-        plot.caption = element_text(family = font, hjust = 0.5, size = 7.5, color = "#E6E6EA", margin = margin(t = 35)),
+        plot.caption = element_text(family = font, hjust = 0.5, size = 7.5, color = "#FFFFFF", margin = margin(t = 35)),
         plot.caption.position = "plot",
         legend.position = "none",
         strip.text = element_blank(),
         plot.margin = unit(c(1, 0, 1, 0), "cm"),
-        panel.background = element_rect(color = NA, fill = "#050530"),
-        plot.background = element_rect(color = NA, fill = "#050530")) +
+        panel.background = element_rect(color = NA, fill = "#000000"),
+        plot.background = element_rect(color = NA, fill = "#000000")) +
   labs(title = "LIONEL MESSI GOALS",
-       subtitle = "Barcelona, PSG, Argentina and <span style = 'color: #f7b5cd;'>Inter Miami</span><br><span style = 'font-size:8pt;'>as of 4.9.2024</span>",
+       subtitle = "Barcelona, PSG, Argentina and <span style = 'color: #f7b5cd;'>Inter Miami</span><br><span style = 'font-size:8.5pt;'>as of 4.9.2024</span>",
     caption = "#30DayChartChallenge | Data: goal.com | Design: Ryan Hart")
 
 # save plot ———————————————————————————————————————————————————————————————
