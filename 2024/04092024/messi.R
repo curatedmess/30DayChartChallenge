@@ -27,8 +27,8 @@ df <- data.frame(team = c("Barcelona", "PSG", "Argentina", "Inter Miami"), goals
 # create plot -------------------------------------------------------------
 df %>%
   ggplot() +
-  geom_segment(data = df %>% filter(level == "Majors"), aes(x = ifelse(Value == 5, 4.75, Value), y = ifelse(Value == 5, 2.9, 3), xend = ifelse(Value == 5, 0.25, Value), yend = ifelse(Value == 5, 0.1, 0)), color = "#999999", linewidth = 0.75, lineend = "round") +
-  geom_segment(data = df %>% filter(level == "Minors"), aes(x = ifelse(Value == 5, 4.75, Value), y = ifelse(Value == 5, 2.9, 3), xend = ifelse(Value == 5, 0.25, Value), yend = ifelse(Value == 5, 0.1, 0)), color = "#f7b5cd", linewidth = 0.75, lineend = "round") +
+  geom_segment(data = df %>% filter(level == "Majors"), aes(x = ifelse(Value == 5, 4.75, Value), y = ifelse(Value == 5, 2.9, 3), xend = ifelse(Value == 5, 0.25, Value), yend = ifelse(Value == 5, 0.1, 0)), color = "#999999", linewidth = 0.6, lineend = "round") +
+  geom_segment(data = df %>% filter(level == "Minors"), aes(x = ifelse(Value == 5, 4.75, Value), y = ifelse(Value == 5, 2.9, 3), xend = ifelse(Value == 5, 0.25, Value), yend = ifelse(Value == 5, 0.1, 0)), color = "#f7b5cd", linewidth = 0.9, lineend = "round") +
   facet_wrap(~ Group_ID, ncol = 12) +
   coord_equal() +
   theme_void() +
@@ -43,7 +43,7 @@ df %>%
         panel.background = element_rect(color = NA, fill = "#000000"),
         plot.background = element_rect(color = NA, fill = "#000000")) +
   labs(title = "LIONEL MESSI GOALS",
-       subtitle = "Barcelona, PSG, Argentina and <span style = 'color: #f7b5cd;'>Inter Miami</span><br><span style = 'font-size:8.5pt;'>as of 4.9.2024</span>",
+       subtitle = "Barcelona, PSG, Argentina and <span style = 'color: #f7b5cd;'><b>Inter Miami</b></span><br><span style = 'font-size:8.5pt;'>as of 4.9.2024</span>",
     caption = "#30DayChartChallenge | Data: goal.com | Design: Ryan Hart")
 
 # save plot ———————————————————————————————————————————————————————————————
