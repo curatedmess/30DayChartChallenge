@@ -29,11 +29,11 @@ df <- raw %>%
   mutate(x = 1) %>% 
   select(result, duration, seconds, KO, x) %>% 
   mutate(perc = sum(seconds <= 540) / nrow(df) * 100) %>% 
-  mutate(perc2 = sum(KO == "yes") / nrow(df) * 100) %>% 
-  mutate(ko_color = case_when(KO == "yes" ~ "#FAEd27",
-                              KO == "no" & result == "loss" ~ "#FF0000",
-                              KO == "no" & result == "win" ~ "#000000",
-                              KO == "no" & result == "no contest" ~ "#999999"))
+  mutate(perc2 = sum(KO == "yes") / nrow(df) * 100)
+  # mutate(ko_color = case_when(KO == "yes" ~ "#FAEd27",
+  #                             KO == "no" & result == "loss" ~ "#FF0000",
+  #                             KO == "no" & result == "win" ~ "#000000",
+  #                             KO == "no" & result == "no contest" ~ "#999999"))
 
 
 # create data frame for tyson's pro record (wins-losses-no contest) -------
