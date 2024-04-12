@@ -5,7 +5,7 @@
 # load libraries ---------------------------------------------------------------
 library(tidyverse)
 library(showtext)
-# library(ggtext)
+library(ggtext)
 
 # add font ----------------------------------------------------------------
 font_add_google(name = "Courier Prime", family = "Courier Prime")
@@ -22,8 +22,8 @@ raw <- read.csv("iphone.csv")
 
 # wrangle and create data frame -------------------------------------------
 df <- raw %>% 
-  mutate(Stem = as.integer(floor(df$grams / 10))) %>% 
-  mutate(Leaf = as.integer(df$grams %% 10)) %>%
+  mutate(Stem = as.integer(floor(grams / 10))) %>% 
+  mutate(Leaf = as.integer(grams %% 10)) %>%
   group_by(Stem) %>% 
   mutate(row_id = row_number()) %>%
   ungroup() %>% 
@@ -45,11 +45,13 @@ df %>%
         plot.caption = element_text(family = font, hjust = 0.5, size = 7.5, color = "#000000", margin = margin(t = 25)),
         plot.caption.position = "plot",
         legend.position = "none",
+        axis.title.x = element_markdown(family = font, hjust = 0.5, size = 7, color = "#000000", margin = margin(t = 5), lineheight = 1.1),
         plot.margin = unit(c(1, 1, 1, 1), "cm"),
         panel.background = element_rect(color = NA, fill = "#FFFFFF"),
         plot.background = element_rect(color = NA, fill = "#FFFFFF")) +
   labs(title = "Apple iPhone", 
        subtitle = "Weight (in grams) for all 42 models from 2007 to 2023.",
+       x = "<b>How to read this chart:</b> The three-digit weight for each iPhone is split into<br>a vertical stem (the leading two digits) to the left of the line with the rest<br>of the number to the right of the line (the trailing digit) to show clustering.",
        caption = "#30DayChartChallenge | Data: wikipedia.com | Design: Ryan Hart")
 
 # save plot ———————————————————————————————————————————————————————————————
