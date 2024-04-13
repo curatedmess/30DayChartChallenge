@@ -60,17 +60,20 @@ df <- left_join(inventory_parts, colors, by = c("color_id" = "id")) %>%
   mutate(hex = paste0("#", rgb),
          hsl = sapply(hex, convert_hex_to_hsl)) %>% 
   separate(hsl, into = c("hue", "saturation", "lightness"), sep = ",") %>%
-  mutate(across(c(hue, saturation, lightness), as.numeric)) %>%  
+  mutate(across(c(hue, saturation, lightness), as.numeric)) %>% 
+  select(part_num, hex, saturation, lightness) %>% 
+  distinct() %>% 
   group_by(hex) %>% 
-  mutate(count = n()) %>% 
-  distinct(hex, .keep_all = TRUE)
+  mutate(count = n()) 
+# %>% 
+#   distinct(hex, .keep_all = TRUE)
 
 # create plot -------------------------------------------------------------
 df %>% 
   ggplot() +
   geom_point(aes(x = saturation, y = lightness, fill = hex, size = count), shape = 21, color = "#000000") +
   scale_fill_identity() +
-  scale_size(range = c(3, 9), breaks = c(min(df$count), 290, 580, 870, max(df$count)), name = "# of parts") +
+  scale_size(range = c(3, 9), breaks = c(min(df$count), 109, max(df$count)), name = "# of parts") +
   scale_x_continuous(labels = label_percent()) +
   scale_y_continuous(labels = label_percent()) +
   theme_void() +
