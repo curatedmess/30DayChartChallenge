@@ -82,7 +82,7 @@ df %>%
   geom_text(aes(x = 2, y = avg, label = paste0("The avg. was ", round(avg, 1), " °F"), color = Temperature), family = font_t, size = 4, hjust = 0.85, vjust = -0.5, check_overlap = TRUE) +
   geom_point(aes(y = temp, x = 1, color = Temperature),  size = 5, alpha = 0.6, position = position_jitter(width = 0.5, set.seed(393939))) +
   annotate("curve", x = 1.65, y = 40, xend = 1.55, yend = 43, linewidth = 0.5,  curvature = 0.35, arrow = arrow(length = unit(1.25, "mm")), color = "#FFFFFF") +
-  annotate("text", x = 1.65, y = 39, label = "In 1950 the high\nwas colder than\nthe average low\ntemperature.", family = font, size = 2.75, color = "#FFFFFF", hjust = 0, vjust = 1) +
+  annotate("text", x = 1.65, y = 39, label = "In 1959 the high\nwas colder than\nthe average low\ntemperature.", family = font, size = 2.75, color = "#FFFFFF", hjust = 0, vjust = 1) +
   scale_x_continuous(limits = c(0.25, 2)) +
   scale_color_manual(values = c("#cc3363", "#9ad1d4")) +
   scale_shape_identity() +
