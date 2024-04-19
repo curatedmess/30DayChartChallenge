@@ -83,5 +83,5 @@ df_network %>%
        caption = "#30DayChartChallenge | Data: adb.org | Design: Ryan Hart")
 
 # save plot ———————————————————————————————————————————————————————————————
-ggsave(paste0("adb_pacific_", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 6, height = 6)
+ggsave(paste0("adb_southasia_", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 6, height = 6)
 
